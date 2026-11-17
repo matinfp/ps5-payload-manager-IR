@@ -17,12 +17,12 @@ const PayloadCard = ({ payload, onClick, statusInfo, isUpdate: isUpdateProp, isI
       type="button"
       onClick={onClick}
       className={cn(
-        "group flex items-start gap-4 sm:gap-5 p-4 sm:p-5 bg-white/[0.025] hover:bg-white/[0.06] border rounded-2xl md:rounded-3xl transition-all text-left relative overflow-hidden focus:outline-none focus:border-ps-blue focus:bg-white/[0.08]",
+        "group flex items-start gap-4 sm:gap-5 p-4 sm:p-5 glass-card rounded-2xl md:rounded-3xl transition-all text-left relative overflow-hidden focus:outline-none focus:border-emerald-400",
         isUpdate
-          ? "border-ps-blue/20 hover:border-ps-blue/60 bg-ps-blue/[0.02]"
+          ? "border-emerald-500/40 hover:border-emerald-400 bg-emerald-950/20"
           : isInstalled
-          ? "border-white/5 hover:border-ps-blue/40"
-          : "border-white/10 hover:border-ps-blue/50"
+          ? "border-emerald-500/20 hover:border-emerald-500/50"
+          : "border-white/10 hover:border-emerald-500/40"
       )}
     >
       {/* Icon on the left */}

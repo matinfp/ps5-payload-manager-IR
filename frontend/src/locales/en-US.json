@@ -14,7 +14,7 @@
   "app.toasts.upload_failed": "Upload failed",
   "app.toasts.payload_uploaded": "{{fileName}} uploaded",
   "app.toasts.save_failed": "Save failed",
-  "app.offline.title": "Payload Manager is not running...",
+  "app.offline.title": "Matin PLDMGR is not running...",
   "app.offline.message_1": "Please ensure you have loaded",
   "app.offline.message_2": "on your PS5 before launching this application.",
   "app.modals.installing.title": "Installing Payload",

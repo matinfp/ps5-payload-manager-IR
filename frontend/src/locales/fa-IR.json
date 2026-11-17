@@ -14,7 +14,7 @@
   "app.toasts.upload_failed": "آپلود با خطا مواجه شد",
   "app.toasts.payload_uploaded": "{{fileName}} آپلود شد",
   "app.toasts.save_failed": "ذخیره‌سازی ناموفق بود",
-  "app.offline.title": "پیلود منیجر در حال اجرا نمی‌باشد...",
+  "app.offline.title": "پیلود منیجر متین در حال اجرا نمی‌باشد...",
   "app.offline.message_1": "لطفا مطمئن شوید که پیلود را",
   "app.offline.message_2": "بر روی PS5 خود اجرا کرده‌اید.",
   "app.modals.installing.title": "در حال نصب پیلود",

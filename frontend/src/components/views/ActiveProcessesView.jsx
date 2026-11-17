@@ -165,7 +165,7 @@ const ActiveProcessesView = ({ addToast, showConfirm }) => {
               const critical = p.name === 'pldmgr.elf' || p.name === 'elfldr.elf';
               return (
                 <div key={p.pid} className={cn(
-                  "glass-card p-4 md:p-6 rounded-2xl flex flex-row items-center justify-between gap-4 border-white/10 hover:border-ps-blue/20 transition-all bg-white/[0.01]"
+                  "glass-card p-4 md:p-6 rounded-2xl flex flex-row items-center justify-between gap-4 transition-all"
                 )}>
                   <div className="flex items-center space-x-4 min-w-0 flex-1">
                     <div className={cn(

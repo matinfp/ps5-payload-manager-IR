@@ -31,7 +31,7 @@ app.use((req, res, next) => {
   next();
 });
 
-const PORT = 8081;
+const PORT = 8089;
 
 let logs = [
   "[PLDMGR] Mock Server initialized",
@@ -182,7 +182,7 @@ app.get('/repository_payloads', (req, res) => {
       {
         id: 'default',
         name: 'Official Repository',
-        url: 'http://localhost:8081/test_repo.json',
+        url: 'http://localhost:8089/test_repo.json',
         last_update: lastRepositoryUpdate,
         error: false,
         icons_revision: 'mock-icons-v1',
@@ -209,7 +209,7 @@ app.post('/repository_refresh', (req, res) => {
       {
         id: 'default',
         name: 'Official Repository',
-        url: 'http://localhost:8081/test_repo.json',
+        url: 'http://localhost:8089/test_repo.json',
         last_update: lastRepositoryUpdate,
         error: false,
         icons_revision: 'mock-icons-v1',

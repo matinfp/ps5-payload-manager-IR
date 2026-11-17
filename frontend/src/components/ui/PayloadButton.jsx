@@ -55,7 +55,7 @@ const PayloadButton = ({
     <div
       className={cn(
         "group glass-card rounded-ps-xl flex flex-col justify-center border transition-all text-left relative min-h-[72px]",
-        isManageMode ? "border-red-500/20 hover:border-red-500 hover:bg-red-500/10" : "border-white/5 hover:border-ps-blue hover:bg-ps-blue/5",
+        isManageMode ? "border-red-500/30 hover:border-red-500 hover:bg-red-500/10" : "border-emerald-500/20 hover:border-emerald-400 hover:bg-emerald-500/10",
         isManageMode && isUsb && "opacity-50 grayscale cursor-not-allowed"
       )}
     >

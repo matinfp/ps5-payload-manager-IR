@@ -18,6 +18,7 @@ import {
 import { useTranslation } from 'react-i18next'
 
 import './App.css'
+import iranFlag from './assets/iran_lion_sun_flag.svg'
 import { apiFetch, mutationFetch, saveConfigOnExit } from './utils/mutationRequest'
 
 // Contexts
@@ -684,11 +685,32 @@ function App() {
 
   if (isOffline) {
     return (
-      <div className="min-h-screen ps5-bg text-zinc-100 font-ps5 flex flex-col items-center justify-center p-4 text-center">
-        <div className="max-w-lg p-12 bg-black/40 rounded-3xl border border-white/5">
-          <div className="text-7xl font-light text-zinc-400 mb-12 font-mono">:(</div>
-          <h1 className="text-2xl font-bold mb-4 text-zinc-300">{t("app.offline.title", "Payload Manager is not running...")}</h1>
-          <p className="text-lg text-zinc-400 leading-relaxed">{t("app.offline.message_1", "Please ensure you have loaded")} <strong>pldmgr.elf</strong> {t("app.offline.message_2", "on your PS5 before launching this application.")}</p>
+      <div className="min-h-screen ps5-bg text-zinc-100 font-ps5 flex flex-col items-center justify-center p-4 text-center relative overflow-hidden">
+        {/* Background Watermark: Lion and Sun Flag of Iran & Slogan */}
+        <div className="fixed inset-0 pointer-events-none z-0 flex flex-col items-center justify-center overflow-hidden select-none">
+          <img
+            src={iranFlag}
+            alt="Lion and Sun Flag of Iran"
+            className="w-[85vw] max-w-[900px] opacity-[0.14] object-contain filter drop-shadow-[0_0_60px_rgba(34,197,94,0.3)]"
+          />
+          <div className="mt-4 flex flex-col items-center opacity-[0.22] tracking-widest text-center">
+            <span className="text-xl md:text-2xl font-black text-white font-ps5">ایرانو پس میگیریم</span>
+            <span className="text-xs font-bold text-zinc-300 uppercase tracking-widest mt-1">We will take Iran back</span>
+          </div>
+        </div>
+
+        <div className="max-w-lg p-12 bg-black/75 rounded-3xl border border-emerald-500/25 shadow-2xl shadow-emerald-950/60 relative z-10 backdrop-blur-md">
+          <div className="flex justify-center mb-5">
+            <img src={iranFlag} alt="Lion and Sun Flag" className="h-14 w-auto rounded-xl shadow-lg border border-white/20" />
+          </div>
+          <div className="text-6xl font-light text-red-500 mb-4 font-mono">:(</div>
+          <h1 className="text-2xl font-bold mb-1 text-white">Matin PLDMGR is not running...</h1>
+          <p className="text-sm text-emerald-400 font-medium mb-3">پیلود منیجر متین در حال اجرا نمی‌باشد</p>
+          <div className="my-4 py-2 px-4 rounded-xl bg-gradient-to-r from-emerald-950/60 via-zinc-900/60 to-red-950/60 border border-emerald-500/30">
+            <p className="text-sm font-black text-white">ایرانو پس میگیریم</p>
+            <p className="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold">We will take Iran back</p>
+          </div>
+          <p className="text-base text-zinc-400 leading-relaxed">{t("app.offline.message_1", "Please ensure you have loaded")} <strong>pldmgr.elf</strong> {t("app.offline.message_2", "on your PS5 before launching this application.")}</p>
         </div>
       </div>
     )
@@ -708,6 +730,21 @@ function App() {
       "min-h-screen min-h-[100dvh] ps5-bg text-zinc-100 font-ps5 flex",
       isPS5 ? "flex-row overflow-hidden" : "flex-col md:flex-row md:overflow-hidden"
     )}>
+      {/* Iranian Tricolor Accent Bar */}
+      <div className="fixed top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-500 via-white to-red-600 z-[3000] shadow-[0_0_12px_rgba(34,197,94,0.5)]" />
+
+      {/* Background Watermark: Lion and Sun Flag of Iran & Slogan */}
+      <div className="fixed inset-0 pointer-events-none z-0 flex flex-col items-center justify-center overflow-hidden select-none">
+        <img
+          src={iranFlag}
+          alt="Lion and Sun Flag of Iran"
+          className="w-[85vw] max-w-[1100px] opacity-[0.14] object-contain filter drop-shadow-[0_0_60px_rgba(34,197,94,0.3)] transition-opacity"
+        />
+        <div className="mt-6 flex flex-col items-center opacity-[0.20] tracking-widest text-center">
+          <span className="text-2xl md:text-3xl font-black text-white font-ps5">ایرانو پس میگیریم</span>
+          <span className="text-xs md:text-sm font-bold text-zinc-300 uppercase tracking-[0.25em] mt-1">We will take Iran back</span>
+        </div>
+      </div>
       {/* Toast Container */}
       <div data-toast-container className="fixed top-4 right-4 left-4 md:top-8 md:right-8 md:left-auto md:w-[420px] z-[2000] flex flex-col space-y-3 pointer-events-none max-h-[calc(100vh-2rem)] md:max-h-[calc(100vh-4rem)] overflow-y-auto custom-scrollbar">
         {toasts.map(t => (
@@ -795,10 +832,27 @@ function App() {
               <Menu className="w-6 h-6" />
             </button>
             <div className={cn("flex items-center space-x-3 transition-all duration-500", sidebarExpanded ? "opacity-100 scale-100" : "opacity-0 scale-90 absolute pointer-events-none")}>
-              <div className="p-2 bg-ps-blue rounded-xl">
+              <div className="p-2.5 bg-gradient-to-br from-emerald-600 via-green-600 to-emerald-700 rounded-xl shadow-lg shadow-emerald-950/60 border border-emerald-400/30">
                 <LogoIcon className="w-6 h-6 text-white" />
               </div>
-              <span className="text-2xl font-bold tracking-tight text-white">PLDMGR</span>
+              <div className="flex flex-col">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-xl font-black tracking-tight text-white whitespace-nowrap">Matin <span className="text-emerald-400">PLD</span><span className="text-red-500">MGR</span></span>
+                  <span className="text-[10px] bg-red-600/30 text-red-400 border border-red-500/40 px-1.5 py-0.2 rounded-full font-bold">🇮🇷 IR</span>
+                </div>
+                <span className="text-[11px] text-emerald-400/80 font-medium">مدیریت پی‌لود متین</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Iran Slogan Banner in Sidebar */}
+          <div className={cn("transition-all duration-300 overflow-hidden", sidebarExpanded ? "opacity-100 max-h-24 mb-6" : "opacity-0 max-h-0 pointer-events-none")}>
+            <div className="p-3 rounded-2xl bg-gradient-to-r from-emerald-950/70 via-black/50 to-red-950/70 border border-emerald-500/30 shadow-lg flex items-center space-x-3">
+              <img src={iranFlag} alt="Lion and Sun" className="w-9 h-5.5 object-cover rounded shadow border border-white/20 shrink-0" />
+              <div className="min-w-0 flex-1">
+                <p className="text-xs font-black text-white tracking-wide truncate">ایرانو پس میگیریم</p>
+                <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider truncate">We will take Iran back</p>
+              </div>
             </div>
           </div>
 
@@ -851,6 +905,28 @@ function App() {
         "flex flex-col relative min-w-0",
         isPS5 ? "h-screen flex-1 min-h-0" : "md:h-screen md:flex-1 md:min-h-0"
       )}>
+        {/* Mobile Header Bar */}
+        <div className={cn(
+          "px-4 py-3 bg-black/60 border-b border-emerald-500/20 flex items-center justify-between relative z-10",
+          isPS5 ? "hidden" : "md:hidden"
+        )}>
+          <div className="flex items-center space-x-2.5">
+            <div className="p-1.5 bg-emerald-600 rounded-lg">
+              <LogoIcon className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-base font-black tracking-tight text-white leading-tight">Matin <span className="text-emerald-400">PLD</span><span className="text-red-500">MGR</span></span>
+              <span className="text-[10px] text-emerald-400 font-medium">مدیریت پی‌لود متین</span>
+            </div>
+          </div>
+          <div className="flex items-center space-x-2">
+            <div className="text-right flex flex-col">
+              <span className="text-xs font-black text-white leading-tight">ایرانو پس میگیریم</span>
+              <span className="text-[9px] text-zinc-400 font-semibold uppercase leading-tight">We will take Iran back</span>
+            </div>
+            <img src={iranFlag} alt="Lion and Sun" className="w-7 h-4.5 object-cover rounded shadow border border-white/20 shrink-0" />
+          </div>
+        </div>
         <main ref={mainRef} className={cn(
           "custom-scrollbar max-w-[1800px] mx-auto w-full min-w-0 flex flex-col",
           view === 'autoload'
@@ -980,10 +1056,23 @@ function App() {
                     ) : isManageMode ? (
                       t("app.dashboard.removePayload", "Remove Payload")
                     ) : (
-                      <>{t("app.dashboard.title_1", "Launch")} <span className="text-ps-blue">{t("app.dashboard.title_2", "Payload")}</span></>
+                      <span className="flex items-center gap-3">
+                        <span>{t("app.dashboard.title_1", "Launch")} <span className="text-emerald-400">{t("app.dashboard.title_2", "Payload")}</span></span>
+                        <span className="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2.5 py-1 rounded-full font-bold tracking-wider hidden sm:inline-flex items-center gap-1">
+                          🇮🇷 Matin
+                        </span>
+                      </span>
                     )}
                   </h2>
                   <div className="flex items-center space-x-3">
+                    {/* Proud Iran Slogan Badge */}
+                    <div className="hidden sm:flex items-center space-x-2.5 px-3.5 py-1.5 rounded-2xl bg-gradient-to-r from-emerald-950/60 via-black/40 to-red-950/60 border border-emerald-500/25 shadow-md">
+                      <img src={iranFlag} alt="Lion and Sun" className="w-6 h-4 object-cover rounded shadow border border-white/20 shrink-0" />
+                      <div className="flex flex-col text-right">
+                        <span className="text-xs font-black text-white leading-tight">ایرانو پس میگیریم</span>
+                        <span className="text-[9px] text-zinc-400 font-bold uppercase leading-tight">We will take Iran back</span>
+                      </div>
+                    </div>
                     <button
                       onClick={() => { setIsManageMode(!isManageMode); setIsFavoriteEditMode(false); }}
                       className={cn(

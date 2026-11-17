@@ -5,6 +5,7 @@ import { cn, parsePayloadName } from '../../utils/helpers'
 import { useRepository } from '../../contexts/RepositoryContext'
 import PayloadName from '../ui/PayloadName'
 import PayloadIcon from '../ui/PayloadIcon'
+import iranFlag from '../../assets/iran_lion_sun_flag.svg'
 import { autoloadPhase, autoloadSequenceItems, autoloadDisplay, autoloadDelayDisplay } from '../../utils/autoloadProgress'
 
 function useRemainingTime(sampleMs, key, running) {
@@ -82,11 +83,37 @@ const AutoloadOverlay = ({ status, items = [], itemsLoading = false, onCancel, o
   }
 
   return (
-    <div className="fixed inset-0 bg-[#08080a] z-[9999] px-5 md:px-10 py-2 overflow-y-auto custom-scrollbar">
-      <div className="mx-auto w-full max-w-[1400px] min-h-full flex flex-col justify-center">
+    <div className="fixed inset-0 bg-[#060a07] bg-[radial-gradient(ellipse_at_top_left,_rgba(22,163,74,0.18),_transparent_50%),_radial-gradient(ellipse_at_bottom_right,_rgba(220,38,38,0.16),_transparent_50%)] z-[9999] px-5 md:px-10 py-2 overflow-y-auto custom-scrollbar relative">
+      {/* Iranian Tricolor Accent Bar */}
+      <div className="fixed top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-500 via-white to-red-600 z-[10000] shadow-[0_0_12px_rgba(34,197,94,0.5)]" />
+
+      {/* Background Watermark: Lion and Sun Flag of Iran & Slogan */}
+      <div className="fixed inset-0 pointer-events-none z-0 flex flex-col items-center justify-center overflow-hidden select-none">
+        <img
+          src={iranFlag}
+          alt="Lion and Sun Flag of Iran"
+          className="w-[85vw] max-w-[1000px] opacity-[0.14] object-contain filter drop-shadow-[0_0_60px_rgba(34,197,94,0.3)]"
+        />
+        <div className="mt-6 flex flex-col items-center opacity-[0.20] tracking-widest text-center">
+          <span className="text-2xl md:text-3xl font-black text-white font-ps5">ایرانو پس میگیریم</span>
+          <span className="text-xs md:text-sm font-bold text-zinc-300 uppercase tracking-[0.25em] mt-1">We will take Iran back</span>
+        </div>
+      </div>
+
+      <div className="mx-auto w-full max-w-[1400px] min-h-full flex flex-col justify-center relative z-10">
         <div className={cn('grid grid-cols-1 gap-8 items-center lg:grid-cols-2', isPS5 ? 'grid-cols-[minmax(0,2fr)_minmax(0,3fr)]' : 'md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]')}>
           <div className="flex flex-col items-center space-y-6 md:space-y-8 w-full min-w-0 max-w-[560px] justify-self-center">
             <div className="text-center space-y-2">
+              <div className="flex flex-col items-center gap-1.5 mb-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold tracking-widest uppercase">
+                  <img src={iranFlag} alt="Flag" className="w-5 h-3.5 object-cover rounded shadow" />
+                  <span>Matin PLDMGR</span>
+                </div>
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-emerald-950/70 via-black/50 to-red-950/70 border border-emerald-500/30 shadow-md">
+                  <span className="text-sm font-black text-white">ایرانو پس میگیریم</span>
+                  <span className="text-xs text-zinc-400 font-semibold">• We will take Iran back</span>
+                </div>
+              </div>
               <h2 className="text-2xl md:text-4xl font-bold text-white">
                 {isDone ? `${t('autoload_overlay.done_title_1', 'Autoload')} ${t('autoload_overlay.done_title_2', 'Done')}`
                   : isExecuting ? t('autoload_overlay.executing', 'Executing') : t('autoload_overlay.autoloading', 'Autoloading')}
@@ -120,7 +147,7 @@ const AutoloadOverlay = ({ status, items = [], itemsLoading = false, onCancel, o
               </div>
             )}
             <button onClick={isDone ? onFinish : onCancel} autoFocus={!isDone}
-              className={cn('w-full py-4 md:py-5 px-4 rounded-2xl text-lg md:text-xl font-bold border transition-colors', isDone ? 'bg-ps-blue border-ps-blue text-white hover:bg-[#007acc]' : 'bg-white/5 border-white/10 text-white hover:bg-red-600 hover:border-red-600')}>
+              className={cn('w-full py-4 md:py-5 px-4 rounded-2xl text-lg md:text-xl font-bold border transition-all shadow-lg', isDone ? 'bg-gradient-to-r from-emerald-600 to-green-600 border-emerald-500/50 text-white hover:from-emerald-500 hover:to-green-500 shadow-emerald-950/50' : 'bg-red-600/15 border-red-500/30 text-red-300 hover:bg-red-600 hover:text-white hover:border-red-600 shadow-red-950/40')}>
               {isDone ? t('autoload_overlay.return_btn', 'Return to Dashboard') : t('autoload_overlay.abort_btn', 'Abort Autoload')}
             </button>
           </div>

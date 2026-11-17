@@ -28,34 +28,34 @@ export default defineConfig({
     proxy: {
       // Preserve the browser-facing Host so backend Origin/Referer checks
       // work through the same-origin development proxy.
-      '/usb_move_check': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/usb_move_perform': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/processes_list': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/process_kill': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/history_list': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/shutdown': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/getip': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/version': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/list_payloads': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/autoload_status': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/get_config': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/set_config': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/loadpayload:': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/manage:': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/abort': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/autoload_clear': { target: 'http://127.0.0.1:8081', changeOrigin: false },
+      '/usb_move_check': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/usb_move_perform': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/processes_list': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/process_kill': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/history_list': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/shutdown': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/getip': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/version': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/list_payloads': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/autoload_status': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/get_config': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/set_config': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/loadpayload:': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/manage:': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/abort': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/autoload_clear': { target: 'http://127.0.0.1:8089', changeOrigin: false },
       '/events': {
-        target: 'http://127.0.0.1:8081',
+        target: 'http://127.0.0.1:8089',
         changeOrigin: false,
         sse: true
       },
-      '/sources_list': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/sources_set': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/sources_add': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/sources_remove': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/repository_payloads': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/repository_refresh': { target: 'http://127.0.0.1:8081', changeOrigin: false },
-      '/repository_install': { target: 'http://127.0.0.1:8081', changeOrigin: false }
+      '/sources_list': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/sources_set': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/sources_add': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/sources_remove': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/repository_payloads': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/repository_refresh': { target: 'http://127.0.0.1:8089', changeOrigin: false },
+      '/repository_install': { target: 'http://127.0.0.1:8089', changeOrigin: false }
     }
   }
 })

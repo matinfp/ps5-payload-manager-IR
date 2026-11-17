@@ -14,7 +14,7 @@ const NavButton = ({ active, onClick, icon: _Icon, label, mobileLabel, className
             : (isPS5 ? "flex-row space-x-3 px-6 py-3 rounded-2xl" : "flex-col md:flex-row md:space-x-3 px-4 md:px-6 py-2 md:py-3 rounded-2xl border-none flex-1 md:flex-none"),
           active
             ? (sidebar
-              ? (isDonate ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.3)]" : "bg-ps-blue text-white shadow-[0_0_20px_rgba(0,112,209,0.3)]")
+              ? (isDonate ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.4)]" : "bg-gradient-to-r from-emerald-600 to-green-600 text-white shadow-[0_0_20px_rgba(34,197,94,0.35)]")
               : (isDonate ? "text-red-500" : "text-ps-blue font-black"))
             : (isDonate ? "text-red-500/60" : "bg-transparent text-zinc-400 hover:text-white"),
           className

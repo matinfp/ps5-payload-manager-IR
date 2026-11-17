@@ -7,12 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        'ps-blue': '#0095ff',
-        'ps-blue-glow': 'rgba(0, 149, 255, 0.4)',
-        'ps-black': '#08080a',
-        'ps-surface': '#101014',
-        'ps-card': 'rgba(24, 24, 28, 0.8)',
-        'ps-border': 'rgba(255, 255, 255, 0.08)',
+        'ps-blue': '#16a34a',
+        'ps-blue-glow': 'rgba(22, 163, 74, 0.45)',
+        'iran-green': '#16a34a',
+        'iran-green-light': '#22c55e',
+        'iran-red': '#dc2626',
+        'iran-red-light': '#ef4444',
+        'iran-red-glow': 'rgba(220, 38, 38, 0.45)',
+        'ps-black': '#070b08',
+        'ps-surface': 'rgba(10, 16, 12, 0.94)',
+        'ps-card': 'rgba(12, 20, 15, 0.92)',
+        'ps-border': 'rgba(34, 197, 94, 0.22)',
       },
       borderRadius: {
         'ps-xl': '1rem',
@@ -20,7 +25,7 @@ export default {
         'ps-3xl': '2rem',
       },
       fontFamily: {
-        'ps5': ["Inter", "system-ui", "sans-serif"],
+        'ps5': ["Vazirmatn", "Tahoma", "Segoe UI", "Inter", "system-ui", "sans-serif"],
       }
     },
   },

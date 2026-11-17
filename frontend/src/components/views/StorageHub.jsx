@@ -751,7 +751,7 @@ const StorageHub = ({
                 return (
                   <div
                     key={path}
-                    className="group flex flex-row items-center justify-between p-4 md:p-6 glass-card rounded-ps-2xl border-white/10 hover:border-ps-blue/30 gap-4"
+                    className="group flex flex-row items-center justify-between p-4 md:p-6 glass-card rounded-ps-2xl gap-4"
                   >
                     <div className="flex items-center space-x-4 md:space-x-6 min-w-0">
                       <div className="p-3 md:p-4 bg-white/5 rounded-2xl group-hover:bg-ps-blue/10 transition-colors shrink-0">

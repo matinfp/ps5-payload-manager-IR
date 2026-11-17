@@ -3,6 +3,8 @@ import { Terminal, ChevronRight, Globe, Languages } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { cn } from '../../utils/helpers'
 import { LANGUAGE_NAMES } from '../../utils/localeSupport'
+import LogoIcon from '../ui/LogoIcon'
+import iranFlag from '../../assets/iran_lion_sun_flag.svg'
 
 const FOLLOW_BROWSER_LANGUAGE = '__auto__'
 
@@ -16,7 +18,7 @@ const isFollowingBrowserLanguage = () => {
 
 const SettingRow = ({ title, description, children, icon: Icon, vertical }) => (
   <div className={cn(
-    "p-5 md:p-8 bg-white/[0.03] rounded-3xl border border-white/10 hover:border-ps-blue/30 transition-all group h-full",
+    "p-5 md:p-8 glass-card rounded-3xl transition-all group h-full",
     vertical ? "flex flex-col space-y-4" : "grid grid-cols-[1fr_auto] gap-x-4 gap-y-3 md:flex md:items-center md:justify-between md:gap-6"
   )}>
     <div className="flex items-start md:items-center space-x-4 md:space-x-6 min-w-0 col-span-1">
@@ -319,7 +321,7 @@ const SettingsView = ({ config, onSaveConfig, setShowLogs, onNavigate, onClearCa
           {multiSources && (
             <button
               onClick={() => onNavigate('sources')}
-              className="group w-full text-left grid grid-cols-[1fr_auto] md:flex md:items-center md:justify-between p-5 md:p-8 bg-white/[0.03] rounded-3xl border border-white/10 hover:border-ps-blue/50 hover:bg-ps-blue/5 transition-all gap-x-4 gap-y-3 md:gap-6"
+              className="group w-full text-left grid grid-cols-[1fr_auto] md:flex md:items-center md:justify-between p-5 md:p-8 glass-card rounded-3xl transition-all gap-x-4 gap-y-3 md:gap-6"
             >
               <div className="flex items-start md:items-center space-x-4 md:space-x-6 min-w-0 col-span-1">
                 <div className="p-3 md:p-4 bg-white/5 rounded-2xl group-hover:bg-ps-blue/10 transition-colors shrink-0">
@@ -350,7 +352,7 @@ const SettingsView = ({ config, onSaveConfig, setShowLogs, onNavigate, onClearCa
 
         <button
           onClick={() => setShowLogs(true)}
-          className="group w-full text-left grid grid-cols-[1fr_auto] md:flex md:items-center md:justify-between p-5 md:p-8 bg-white/[0.03] rounded-3xl border border-white/10 hover:border-ps-blue/50 hover:bg-ps-blue/5 transition-all gap-x-4 gap-y-3 md:gap-6"
+          className="group w-full text-left grid grid-cols-[1fr_auto] md:flex md:items-center md:justify-between p-5 md:p-8 glass-card rounded-3xl transition-all gap-x-4 gap-y-3 md:gap-6"
         >
           <div className="flex items-start md:items-center space-x-4 md:space-x-6 min-w-0 col-span-1">
             <div className="p-3 md:p-4 bg-white/5 rounded-2xl group-hover:bg-ps-blue/10 transition-colors shrink-0">
@@ -368,6 +370,22 @@ const SettingsView = ({ config, onSaveConfig, setShowLogs, onNavigate, onClearCa
             {t("settings.log_viewer_desc", "Access real-time debug output from the Payload Manager daemon.")}
           </p>
         </button>
+      </section>
+
+      {/* About Matin PLDMGR */}
+      <section className="space-y-4 pt-6 border-t border-white/5">
+        <div className="p-6 rounded-3xl bg-gradient-to-r from-emerald-950/40 via-black/40 to-red-950/40 border border-emerald-500/25 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center space-x-4">
+            <img src={iranFlag} alt="Lion and Sun" className="h-12 w-auto object-cover rounded-xl shadow-lg border border-white/20 shrink-0" />
+            <div>
+              <h4 className="text-lg font-black text-white flex items-center gap-2">
+                Matin PLDMGR <span className="text-xs bg-red-600/30 text-red-400 border border-red-500/40 px-2 py-0.5 rounded-full font-bold">🇮🇷 IRAN</span>
+              </h4>
+              <p className="text-xs text-emerald-400 font-bold mt-1">ایرانو پس میگیریم <span className="text-zinc-400 font-normal">• We will take Iran back</span></p>
+            </div>
+          </div>
+          <span className="text-xs text-zinc-400 font-mono bg-white/5 px-3 py-1.5 rounded-xl border border-white/10">v0.6.3 (Matin Edition)</span>
+        </div>
       </section>
 
 
